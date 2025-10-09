@@ -1,0 +1,8 @@
+# Ignore binary output folder
+/bin/
+
+# Ignore object files folder
+/obj/
+
+# Ignore VSCode settings folder
+/.vscode/
