@@ -8,10 +8,7 @@ int main()
 {
   SDL_Init(SDL_INIT_VIDEO);
 
-  SDL_Window* Window = SDL_CreateWindow("Shiro",                                     
-                                    INIT_WIDTH,
-                                    INIT_HEIGHT,
-                                    SDL_WINDOW_RESIZABLE);  // or some flags like SDL_WINDOW_SHOWN
+  SDL_Window* Window = SDL_CreateWindow("Shiro", INIT_WIDTH, INIT_HEIGHT, SDL_WINDOW_RESIZABLE); 
 
   if (!Window) {
       fprintf(stderr, "Failed to create window: %s\n", SDL_GetError());
@@ -30,13 +27,14 @@ int main()
   WindowData WindowData = {Width, Height, Window};
   // SDL_Surface *Screen = SDL_GetWindowSurface(Window);
   
+
+
   while (handleEvents(&WindowData)) {
     SDL_SetRenderDrawColor(Renderer, 0, 0, 0, 255);
     SDL_RenderClear(Renderer);
     SDL_RenderPresent(Renderer);
     SDL_Delay(10);
   }
-
 
   SDL_DestroyRenderer(Renderer);
   SDL_DestroyWindow(Window);

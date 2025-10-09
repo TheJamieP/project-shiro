@@ -14,4 +14,10 @@ typedef struct {
     int height;
     SDL_Window* Window;
 } WindowData;
+
+typedef struct {
+    int x;
+    int y;
+    SDL_Texture* Texture;
+} Entity;
 #endif

@@ -15,9 +15,8 @@ bool handleEvents(WindowData* WindowData){
             break;
         
             case SDL_EVENT_WINDOW_RESIZED:
-                printf("%s\n", "resized");
                 SDL_GetWindowSize(WindowData->Window, &WindowData->width, &WindowData->height);
-                printf("%d,%d\n", WindowData->width, WindowData->height);
+                return true;
             break;
         }
         
