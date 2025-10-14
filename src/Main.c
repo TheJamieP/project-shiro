@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "./Consts.h"
 #include "Events/Events.h"
+#include "./Entity/Entity.h"
 
 int main()
 {
@@ -27,11 +28,12 @@ int main()
   WindowData WindowData = {Width, Height, Window};
   // SDL_Surface *Screen = SDL_GetWindowSurface(Window);
   
-
+  Entity Test = CreateEntity(138, 220, 1, 1, "./assets/Entities/Test.bmp", Renderer);
+  
 
   while (handleEvents(&WindowData)) {
     SDL_SetRenderDrawColor(Renderer, 0, 0, 0, 255);
-    SDL_RenderClear(Renderer);
+    SDL_RenderTexture(Renderer, Test.Texture, NULL, &Test.Rect);
     SDL_RenderPresent(Renderer);
     SDL_Delay(10);
   }

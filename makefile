@@ -35,8 +35,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 # Clean build artifacts
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)
-
+	clear
 # Run the binary
 run: all
 	clear
+	make clean
+	clear
+	make
 	LD_LIBRARY_PATH=/usr/local/lib ./bin/Shiro

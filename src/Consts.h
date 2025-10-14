@@ -16,8 +16,9 @@ typedef struct {
 } WindowData;
 
 typedef struct {
-    int x;
-    int y;
     SDL_Texture* Texture;
+    SDL_FRect Rect;
+    int scaleX;
+    int scaleY;
 } Entity;
 #endif
