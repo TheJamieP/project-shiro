@@ -4,6 +4,8 @@
 #define INIT_WIDTH 600
 #define INIT_HEIGHT 600
 
+#include "SDL3/SDL.h"
+
 typedef struct {
     int x;
     int y;
@@ -21,4 +23,10 @@ typedef struct {
     int scaleX;
     int scaleY;
 } Entity;
+
+typedef struct {
+    size_t Size;
+    int length;
+    Entity *List;
+}  EntityList;
 #endif
