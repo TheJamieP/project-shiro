@@ -12,21 +12,23 @@ typedef struct {
 } vec2;
 
 typedef struct {
-    int width;
-    int height;
-    SDL_Window* Window;
-} WindowData;
-
-typedef struct {
     SDL_Texture* Texture;
     SDL_FRect Rect;
     int scaleX;
     int scaleY;
+    char* Name;
 } Entity;
 
 typedef struct {
-    size_t Size;
     int length;
     Entity *List;
 }  EntityList;
+
+typedef struct {
+    int width;
+    int height;
+    SDL_Window* Window;
+    SDL_Renderer* Renderer;
+    EntityList* EntList;
+} WindowData;
 #endif

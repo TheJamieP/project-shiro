@@ -33,23 +33,3 @@ void dirPrint(){
 
     free(buffer);
 }
-
-
-void AddEntityToList(EntityList *EntList, Entity Ent){
-
-    Entity* Buffer = realloc(EntList->List,(EntList->length + 1) * sizeof(Ent));
-    if (Buffer == NULL){
-        perror("Buffer not allocated");
-    }
-    Buffer[EntList->length] = Ent;
-
-    EntList->List = Buffer;
-    EntList->length++;
-}
-
-EntityList *InitEntList(){
-    EntityList *EntList = malloc(sizeof(EntityList));
-    EntList->length = 0;
-    EntList->List = malloc(EntList->length * sizeof(Entity));
-    return EntList;
-}

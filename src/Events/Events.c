@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "Events.h"
 #include "../Consts.h"
+#include "Entity/Entity.h"
 
 bool handleEvents(WindowData* WindowData){
     SDL_Event Event;
@@ -10,6 +11,16 @@ bool handleEvents(WindowData* WindowData){
     {
         switch (Event.type)
         {
+            case SDL_EVENT_KEY_DOWN:
+                switch (Event.key.key){
+                    case SDLK_6:
+                        printf("6 pressed\n");
+                        
+                        RemoveEntityFromListByName(WindowData->EntList, "Test2");
+                        return true;
+                    break;
+                }
+
             case SDL_EVENT_QUIT:
                 return false;
             break;
